@@ -16,10 +16,12 @@ function displayParks(responseJson) {
     for (let i = 0; i < responseJson.data.length; i++) {
 
         $('#results-list').append(
-            `<li><h3>${responseJson.data[i].name}</h3>
-            <p>${responseJson.data[i].url}</p>
+            `<li>
+            <h3> <a href="${responseJson.data[i].url}" target="_blank">${responseJson.data[i].name}</a> </h3>
             <p>${responseJson.data[i].description}</p>
+            <div>
             <img src='${responseJson.data[i].images[0].url}'>
+            </div>
             <p>${responseJson.data[i].images[0].title}</p>
             </li>`
         )
